@@ -1,0 +1,10 @@
+evds
+polars
+pandas
+numpy
+statsmodels
+scikit-learn
+scipy
+matplotlib
+pyarrow
+openpyxl
