@@ -48,13 +48,11 @@ The EVDS API key is set in `src/config.py`. If you want to use your own, registe
 ## Running
 
 ```bash
-python main.py                   # full pipeline end-to-end (~5–15 minutes; the Gibbs sampler dominates)
-python main.py --only 5 6        # rerun the SVAR and counterfactual after editing one of them
-python main.py --skip 0          # skip the data pull if data/ is already populated
+python main.py                   # full pipeline end-to-end
 ```
 
 Results land in:
-- `results/figures/` — every PNG referenced in the paper (PCA factors, MS Taylor regimes and determinacy index, sign-restricted IRFs, counterfactual gap and factor decomposition, robustness overlays).
+- `results/figures/` — PCA factors, MS Taylor regimes and determinacy index, sign-restricted IRFs, counterfactual gap and factor decomposition, robustness overlays.
 - `results/csv/` — Kalman parameter summary, regime probabilities, counterfactual rate and CPI tables at monthly / annual frequency, plus CSV mirrors of the raw parquet data.
 
 
