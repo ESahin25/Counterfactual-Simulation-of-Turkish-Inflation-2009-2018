@@ -1,6 +1,5 @@
 # Monetary Regimes and Inflation Inertia in Turkey
 
-EC432 Applied Econometrics — replication code for "Monetary Regimes and Inflation Inertia in Turkey".
 
 The pipeline estimates a three-stage framework on monthly Turkish data, 2003–2026:
 
@@ -58,14 +57,7 @@ Results land in:
 - `results/figures/` — every PNG referenced in the paper (PCA factors, MS Taylor regimes and determinacy index, sign-restricted IRFs, counterfactual gap and factor decomposition, robustness overlays).
 - `results/csv/` — Kalman parameter summary, regime probabilities, counterfactual rate and CPI tables at monthly / annual frequency, plus CSV mirrors of the raw parquet data.
 
-## Notes
-
-- **CBRT overnight borrowing rate.** The discrete decisions are embedded in `src/data_collection.py` (`ON_DECISIONS`) because EVDS does not expose the rate corridor consistently across the asymmetric-corridor period (Nov 2010 – Jul 2011) and the multiple late-liquidity-window regimes post-2018. Add new decisions there.
-- **IPI series.** Seasonally and calendar adjusted, 2021=100, embedded from `EVDS_19-05-2026.xlsx` (`IPI_DATA` dict). Pinned to a fixed vintage so the paper's results are reproducible against TÜİK revisions.
-- **Excluded sub-indices.** J103 (post-secondary non-tertiary education) is dropped in Stage 1 because it is discontinued in 2015. J042 (imputed rentals) is dropped because it is sparse. J126 (financial services n.e.c.) survives Stage 1 but is excluded from the PCA in Stage 3 because its σ²_η explodes.
-- **RNG seeds.** Gibbs sampler and sign-restriction rejection sampler both seed `np.random.seed(1923)`. Results are bit-reproducible up to the version of `numpy` / `scipy` used.
-- **Compute.** Stage 5 (Gibbs) is the slow step — 10,000 iterations × 2 regimes. Reduce `n_iter`/`n_burn` in `src/ms_svar.py` if you need a faster smoke test.
 
 ## Citation
 
-If you use this code, please cite the paper. Replication issues / corrections welcome via PR.
+If you use this code, please cite. Replication issues / corrections welcome via PR.
