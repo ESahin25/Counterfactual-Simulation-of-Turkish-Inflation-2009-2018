@@ -1,4 +1,4 @@
-# COunterfactual Simulation of Turkish Inflation using Monetary Regimes and Inflation Inertia in Turkey
+# Counterfactual Simulation of Turkish Inflation using Monetary Regimes and Inflation Inertia in Turkey
 
 
 The pipeline estimates a three-stage framework on monthly Turkish data, 2003–2026:
